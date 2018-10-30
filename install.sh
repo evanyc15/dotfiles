@@ -16,6 +16,9 @@ fi
 echo "\nPlugInstall to install plugins"
 vim +'PlugInstall --sync' +qa
 
+echo "\nBrewInstall plugins"
+brew install tmux
+
 # Init Bash Profile
 echo "\nInitializing Bash Profile"
 . ~/.bash_profile
