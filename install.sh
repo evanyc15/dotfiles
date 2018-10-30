@@ -1,5 +1,17 @@
 #!/user/bin/env bash
 
+# Check If Dependencies Are Installed
+which fc-cache >/dev/null || { # check if fc-cache is in our path
+	echo "fc-cache not found in path..."
+  	exit 1
+}
+
+which git >/dev/null || { # check if git is in our path
+	echo "git not found in path..."
+	exit 1
+}
+
+
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "\nCreating symlinks..."
@@ -18,6 +30,9 @@ vim +'PlugInstall --sync' +qa
 
 echo "\nBrewInstall plugins"
 brew install tmux
+
+# Update Font Cache
+fc-cache -vrf ~/.fonts
 
 # Init Bash Profile
 echo "\nInitializing Bash Profile"
