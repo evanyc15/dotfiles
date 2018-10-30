@@ -1,5 +1,5 @@
 # dotfiles
 
-VIM / iTerm Configurations
+** VIM / iTerm Configurations
 
 sh install.sh for installation
