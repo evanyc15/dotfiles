@@ -1,3 +1,6 @@
+" Vim defaults
+set number
+
 " Plug Repo Calls
 call plug#begin('~/.vim/plugged')
 
