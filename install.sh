@@ -3,7 +3,7 @@
 # Check If Dependencies Are Installed
 which fc-cache >/dev/null || { # check if fc-cache is in our path
 	echo "fc-cache not found in path..."
-  	exit 1
+	brew install fontconfig
 }
 
 which git >/dev/null || { # check if git is in our path
