@@ -12,6 +12,7 @@ set shiftround
 set expandtab
 set smartindent
 set smarttab
+set nowrap
 
 " Plug Repo Calls
 call plug#begin('$HOME/.vim/plugged')
