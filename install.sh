@@ -31,6 +31,16 @@ vim +'PlugInstall --sync' +qa
 echo "\nBrewInstall plugins"
 brew install tmux
 
+# Install Powerline fonts
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
 # Update Font Cache
 fc-cache -vrf ~/.fonts
 
