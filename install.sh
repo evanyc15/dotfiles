@@ -30,6 +30,7 @@ vim +'PlugInstall --sync' +qa
 
 echo "\nBrewInstall plugins"
 brew install tmux
+brew install cmake
 
 # Install Powerline fonts
 # clone
