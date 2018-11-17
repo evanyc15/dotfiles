@@ -24,6 +24,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --java-completer' }
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -46,6 +47,7 @@ let g:airline#extensions#branch#empty_message = ''
 let g:airline#extensions#branch#displayed_head_limit = 10
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#ale#enabled = 1
 
 " Airline Symbols Config
 if !exists('g:airline_symbols')
@@ -97,3 +99,7 @@ let g:airline_symbols.maxlinenr = ''
 
  " YCM Config
  let g:ycm_autoclose_preview_window_after_completion = 1
+
+ " Ale Config
+ let g:ale_lint_on_save = 1
+ let g:ale_lint_on_text_changed = 1
