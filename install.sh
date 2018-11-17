@@ -26,8 +26,12 @@ if [ ! -d "$CLONE_DIR" ]; then
 fi
 
 echo "\nBrewInstall plugins"
-brew install tmux
-brew install cmake
+brew list node &>/dev/null || brew install node
+brew list tmux &>/dev/null || brew install tmux
+brew list cmake &>/dev/null || brew install cmake
+
+echo "\nNodeInstall plugins"
+npm list -g typescript || npm install -g typescript
 
 echo "\nPlugInstall to install plugins"
 vim +'PlugInstall --sync' +qa

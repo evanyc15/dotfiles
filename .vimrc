@@ -23,7 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --js-completer --java-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --java-completer' }
 
 call plug#end()
 
