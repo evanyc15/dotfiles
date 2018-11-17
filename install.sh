@@ -25,12 +25,12 @@ if [ ! -d "$CLONE_DIR" ]; then
         git clone https://github.com/chriskempson/base16-shell.git "$CLONE_DIR"
 fi
 
-echo "\nPlugInstall to install plugins"
-vim +'PlugInstall --sync' +qa
-
 echo "\nBrewInstall plugins"
 brew install tmux
 brew install cmake
+
+echo "\nPlugInstall to install plugins"
+vim +'PlugInstall --sync' +qa
 
 # Install Powerline fonts
 # clone
