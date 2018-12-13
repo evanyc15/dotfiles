@@ -29,6 +29,9 @@ echo "\nBrewInstall plugins"
 brew list node &>/dev/null || brew install node
 brew list tmux &>/dev/null || brew install tmux
 brew list cmake &>/dev/null || brew install cmake
+brew list fzf &>/dev/null || brew install fzf
+brew list ripgrep &>/dev/null || brew install ripgrep
+brew list fd &>/dev/null || brew install fd
 
 echo "\nNodeInstall plugins"
 npm list -g typescript || npm install -g typescript
