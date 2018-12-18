@@ -18,6 +18,7 @@ echo "\nCreating symlinks..."
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME/.bash_profile
 ln -sfv "$DOTFILES_DIR/.vimrc" $HOME/.vimrc
 ln -sfv "$DOTFILES_DIR/.vim/" $HOME
+ln -sfv "$DOTFILES_DIR/.tmux.conf/" $HOME/.tmux.conf
 
 echo "\nGit cloning base16 colors for shell"
 CLONE_DIR="$HOME/.config/base16-shell"
@@ -55,6 +56,9 @@ fc-cache -vrf ~/.fonts
 # Init Bash Profile
 echo "\nInitializing Bash Profile"
 . ~/.bash_profile
+
+echo "\nInitializing Tmux Config"
+tmux source-file ~/.tmux.conf
 
 echo "\nInstallation complete"
 
