@@ -18,7 +18,7 @@ echo "\nCreating symlinks..."
 ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME/.bash_profile
 ln -sfv "$DOTFILES_DIR/.vimrc" $HOME/.vimrc
 ln -sfv "$DOTFILES_DIR/.vim/" $HOME
-ln -sfv "$DOTFILES_DIR/.tmux.conf/" $HOME/.tmux.conf
+ln -sfv "$DOTFILES_DIR/.tmux.conf" $HOME/.tmux.conf
 
 echo "\nGit cloning base16 colors for shell"
 CLONE_DIR="$HOME/.config/base16-shell"
