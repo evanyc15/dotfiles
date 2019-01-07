@@ -33,6 +33,8 @@ call plug#end()
 " ESC VIM Remap
 inoremap jk <ESC>
 vnoremap jk <ESC>
+let mapleader=" "
+nnoremap <Space> <Nop>
 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
@@ -101,6 +103,7 @@ let g:airline_symbols.maxlinenr = ''
 
  " YCM Config
  let g:ycm_autoclose_preview_window_after_completion = 1
+ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
  " Ale Config
  let g:ale_lint_on_save = 1
