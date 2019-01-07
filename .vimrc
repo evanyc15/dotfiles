@@ -4,15 +4,17 @@ set t_Co=256
 set encoding=utf-8
 syntax on
 
-set autoindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-set smartindent
-set smarttab
-set nowrap
+set backspace=indent,eol,start
+
+" PEP8 styling"
+au BufNewFile,BufRead *.py
+      \ set tabstop=4 |
+      \ set softtabstop=4 |
+      \ set shiftwidth=4 |
+      \ set textwidth=79 |
+      \ set expandtab |
+      \ set autoindent |
+      \ set fileformat=unix
 
 " Plug Repo Calls
 call plug#begin('$HOME/.vim/plugged')
