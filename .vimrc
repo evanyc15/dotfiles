@@ -37,8 +37,8 @@ inoremap jk <ESC>
 vnoremap jk <ESC>
 let mapleader=" "
 nnoremap <Space> <Nop>
-nnoremap <C-f> :Files<CR>
-nnoremap <C-g> :Rg<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>r :Rg<CR>
 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
@@ -103,7 +103,7 @@ let g:airline_symbols.maxlinenr = ''
 
  " Nerdtree Config
  let NERDTreeShowHidden=1
- map <C-n> :NERDTreeToggle<CR>
+ map <leader> :NERDTreeToggle<CR>
 
  " YCM Config
  let g:ycm_autoclose_preview_window_after_completion = 1
