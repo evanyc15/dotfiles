@@ -37,6 +37,8 @@ inoremap jk <ESC>
 vnoremap jk <ESC>
 let mapleader=" "
 nnoremap <Space> <Nop>
+nnoremap <C-f> :Files<CR>
+nnoremap <C-g> :Rg<CR>
 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
