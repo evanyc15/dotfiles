@@ -39,6 +39,9 @@ let mapleader=" "
 nnoremap <Space> <Nop>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg<CR>
+nnoremap <leader>j :bp<CR>
+nnoremap <leader>k :bp<CR>
+nnoremap <leader>l :ls<CR>
 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
