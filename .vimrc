@@ -42,6 +42,7 @@ nnoremap <leader>r :Rg<CR>
 nnoremap <leader>j :bp<CR>
 nnoremap <leader>k :bp<CR>
 nnoremap <leader>l :ls<CR>
+nnoremap <leader>; :bufdo e<CR>
 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
