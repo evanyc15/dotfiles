@@ -40,7 +40,7 @@ nnoremap <Space> <Nop>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg<CR>
 nnoremap <leader>j :bp<CR>
-nnoremap <leader>k :bp<CR>
+nnoremap <leader>k :bn<CR>
 nnoremap <leader>l :ls<CR>
 nnoremap <leader>; :bufdo e<CR>
 
@@ -107,7 +107,8 @@ let g:airline_symbols.maxlinenr = ''
 
  " Nerdtree Config
  let NERDTreeShowHidden=1
- map <leader> :NERDTreeToggle<CR>
+ nnoremap <leader> :NERDTreeToggle<CR>
+ nnoremap <leader>m :NERDTreeFind<CR>
 
  " YCM Config
  let g:ycm_autoclose_preview_window_after_completion = 1
