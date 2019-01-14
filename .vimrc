@@ -49,7 +49,9 @@ call plug#end()
 "  VIM Remap
 inoremap jk <ESC>
 vnoremap jk <ESC>
-let mapleader=" " " Remap leader to space
+
+" Remap leader to space
+let mapleader=" "
 nnoremap <Space> <Nop>
 
 " FZF Remap
