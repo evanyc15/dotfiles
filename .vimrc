@@ -1,10 +1,11 @@
-" Vim defaults
+" ========== GENERAL CONFIGS ========= 
 set number " display line numbers
 set t_Co=256 " 256 colors
 set encoding=utf-8 
 set cursorline " Highlight line cursor is on
 set incsearch " Search while typing
 set hlsearch " Highlights all occurrences of search
+set backspace=indent,eol,start " Fixes issues with backspace not working in insert mode
 syntax on " Syntax highlighting
 
 " Folding configs
@@ -13,8 +14,8 @@ set foldlevelstart=10 " open most folds by default
 set foldnestmax=10 " 10 nested fold max
 set foldmethod=indent
 
-set backspace=indent,eol,start
 
+" ========== PYTHON CONFIGS  ========= 
 " PEP8 styling"
 au BufNewFile,BufRead *.py
       \ set tabstop=4 |
@@ -25,6 +26,8 @@ au BufNewFile,BufRead *.py
       \ set autoindent |
       \ set fileformat=unix
 
+
+" ========== PLUG DEPENDENCY INITIALIZATIONS  ========= 
 " Plug Repo Calls
 call plug#begin('$HOME/.vim/plugged')
 
@@ -41,23 +44,41 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+
+" ========== VIM KEYBINDING REMAPS  ========= 
 "  VIM Remap
 inoremap jk <ESC>
 vnoremap jk <ESC>
 let mapleader=" " " Remap leader to space
 nnoremap <Space> <Nop>
+
+" FZF Remap
 nnoremap <leader>f :Files<CR>
+
+" Ripgrep Remap
 nnoremap <leader>r :Rg<CR>
+
+" Buffers Remap
 nnoremap <leader>j :bp<CR>
 nnoremap <leader>k :bn<CR>
 nnoremap <leader>l :ls<CR>
 nnoremap <leader>; :bufdo e<CR>
+
+" Folding Remap
 nnoremap <leader><space> za
 
-" Toggle search highlight
+" NERDTree Remap
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>m :NERDTreeFind<CR>
+
+"YCM Remap
+nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Toggle search highlight Remap
 let hlstate = 0
 nnoremap <leader>/ :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<CR>
 
+" ========== PLUGIN-SPECIFIC CONFIGS  ========= 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
   let base16colorspace=256
@@ -121,12 +142,9 @@ let g:airline_symbols.maxlinenr = ''
 
  " Nerdtree Config
  let NERDTreeShowHidden=1
- nnoremap <leader> :NERDTreeToggle<CR>
- nnoremap <leader>m :NERDTreeFind<CR>
 
  " YCM Config
  let g:ycm_autoclose_preview_window_after_completion = 1
- map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
  " Ale Config
  let g:ale_lint_on_save = 1
