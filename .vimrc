@@ -1,8 +1,17 @@
 " Vim defaults
-set number
-set t_Co=256
-set encoding=utf-8
-syntax on
+set number " display line numbers
+set t_Co=256 " 256 colors
+set encoding=utf-8 
+set cursorline " Highlight line cursor is on
+set incsearch " Search while typing
+set hlsearch " Highlights all occurrences of search
+syntax on " Syntax highlighting
+
+" Folding configs
+set foldenable " Enable folding
+set foldlevelstart=10 " open most folds by default
+set foldnestmax=10 " 10 nested fold max
+set foldmethod=indent
 
 set backspace=indent,eol,start
 
@@ -32,10 +41,10 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" ESC VIM Remap
+"  VIM Remap
 inoremap jk <ESC>
 vnoremap jk <ESC>
-let mapleader=" "
+let mapleader=" " " Remap leader to space
 nnoremap <Space> <Nop>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg<CR>
@@ -43,6 +52,11 @@ nnoremap <leader>j :bp<CR>
 nnoremap <leader>k :bn<CR>
 nnoremap <leader>l :ls<CR>
 nnoremap <leader>; :bufdo e<CR>
+nnoremap <leader><space> za
+
+" Toggle search highlight
+let hlstate = 0
+nnoremap <leader>/ :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<CR>
 
 " Base16 Vimrc command for sync vim and shell
 if filereadable(expand("$HOME/.vimrc_background"))
