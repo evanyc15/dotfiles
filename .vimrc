@@ -8,6 +8,7 @@ set hlsearch " Highlights all occurrences of search
 set backspace=indent,eol,start " Fixes issues with backspace not working in insert mode
 set hidden " Prevents buffer from being lost when switching
 syntax on " Syntax highlighting
+se mouse+=a "mouse shouldn't select line numbers"
 
 " Folding configs
 set foldenable " Enable folding
