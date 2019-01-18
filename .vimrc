@@ -6,6 +6,7 @@ set cursorline " Highlight line cursor is on
 set incsearch " Search while typing
 set hlsearch " Highlights all occurrences of search
 set backspace=indent,eol,start " Fixes issues with backspace not working in insert mode
+set hidden " Prevents buffer from being lost when switching
 syntax on " Syntax highlighting
 
 " Folding configs
@@ -53,6 +54,7 @@ vnoremap jk <ESC>
 " Remap leader to space
 let mapleader=" "
 nnoremap <Space> <Nop>
+nnoremap <leader>s :mksession! $HOME/session.vim<CR>
 
 " FZF Remap
 nnoremap <leader>f :Files<CR>
@@ -133,21 +135,21 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 
- " old vim-powerline symbols
- let g:airline_left_sep = '⮀'
- let g:airline_left_alt_sep = '⮁'
- let g:airline_right_sep = '⮂'
- let g:airline_right_alt_sep = '⮃'
- let g:airline_symbols.branch = '⭠'
- let g:airline_symbols.readonly = '⭤'
- let g:airline_symbols.linenr = '⭡'
+" old vim-powerline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
 
- " Nerdtree Config
- let NERDTreeShowHidden=1
+" Nerdtree Config
+let NERDTreeShowHidden=1
 
- " YCM Config
- let g:ycm_autoclose_preview_window_after_completion = 1
+" YCM Config
+let g:ycm_autoclose_preview_window_after_completion = 1
 
- " Ale Config
- let g:ale_lint_on_save = 1
- let g:ale_lint_on_text_changed = 1
+" Ale Config
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 1
