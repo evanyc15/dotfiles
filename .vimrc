@@ -8,6 +8,7 @@ set hlsearch " Highlights all occurrences of search
 set backspace=indent,eol,start " Fixes issues with backspace not working in insert mode
 set hidden " Prevents buffer from being lost when switching
 syntax on " Syntax highlighting
+filetype on
 
 " Folding configs
 set foldenable " Enable folding
@@ -27,6 +28,8 @@ au BufNewFile,BufRead *.py
       \ set autoindent |
       \ set fileformat=unix
 
+" SQL Styling
+au BufNewFile,BufRead *.ql set filetype=sql
 
 " ========== PLUG DEPENDENCY INITIALIZATIONS  ========= 
 " Plug Repo Calls
@@ -42,6 +45,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --java-completer' }
 Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'shmup/vim-sql-syntax'
 
 call plug#end()
 
@@ -146,6 +150,7 @@ let g:airline_symbols.linenr = '⭡'
 
 " Nerdtree Config
 let NERDTreeShowHidden=1
+let g:NERDTreeWinSize=60
 
 " YCM Config
 let g:ycm_autoclose_preview_window_after_completion = 1
