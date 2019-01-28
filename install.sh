@@ -19,6 +19,7 @@ ln -sfv "$DOTFILES_DIR/.bash_profile" $HOME/.bash_profile
 ln -sfv "$DOTFILES_DIR/.vimrc" $HOME/.vimrc
 ln -sfv "$DOTFILES_DIR/.vim/" $HOME
 ln -sfv "$DOTFILES_DIR/.tmux.conf" $HOME/.tmux.conf
+ln -sfv "$DOTFILES_DIR/.tern-config" $HOME/.tern-config
 
 echo "\nGit cloning base16 colors for shell"
 CLONE_DIR="$HOME/.config/base16-shell"
@@ -33,9 +34,11 @@ brew list cmake &>/dev/null || brew install cmake
 brew list fzf &>/dev/null || brew install fzf
 brew list ripgrep &>/dev/null || brew install ripgrep
 brew list fd &>/dev/null || brew install fd
+brew list flow &>/dev/null || brew install flow
 
 echo "\nNodeInstall plugins"
-npm list -g typescript || npm install -g typescript
+npm list -g eslint || npm install -g eslint
+npm list -g eslint-plugin-flowtype || npm install -g eslint-plugin-flowtype
 
 echo "\nPlugInstall to install plugins"
 vim +'PlugInstall --sync' +qa

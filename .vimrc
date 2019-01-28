@@ -43,13 +43,34 @@ set foldmethod=indent
 " ========== PYTHON CONFIGS  ========= 
 " PEP8 styling"
 au BufNewFile,BufRead *.py
-      \ set tabstop=4 |
-      \ set softtabstop=4 |
-      \ set shiftwidth=4 |
-      \ set textwidth=79 |
-      \ set expandtab |
-      \ set autoindent |
-      \ set fileformat=unix
+	\ set tabstop=4 |
+        \ set softtabstop=4 |
+        \ set shiftwidth=4 |
+        \ set textwidth=79 |
+        \ set expandtab |
+        \ set autoindent |
+        \ set fileformat=unix
+
+" JS/JSX styling"
+au BufNewFile,BufRead *.js
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
+	\ set expandtab
+
+" HTML styling
+au BufNewFile,BufRead *.html
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
+	\ set expandtab
+
+" CSS styling
+au BufNewFile,BufRead *.css
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
+	\ set expandtab
 
 " SQL Styling
 au BufNewFile,BufRead *.ql set filetype=sql
@@ -64,11 +85,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --java-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --java-completer --tern-completer' }
 Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'shmup/vim-sql-syntax'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 call plug#end()
 
@@ -94,6 +118,7 @@ nnoremap <leader>j :bp<CR>
 nnoremap <leader>k :bn<CR>
 nnoremap <leader>l :ls<CR>
 nnoremap <leader>; :bufdo e<CR>
+nnoremap <leader>h :bd<CR>
 
 " Folding Remap
 nnoremap <leader><space> za
@@ -181,3 +206,14 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Ale Config
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+	\'javascript': ['flow', 'eslint'],
+	\'python': ['flake8'],
+\}
+let g:ale_fixers = {
+	\'javascript': ['eslint'],
+\}
+let g:ale_linters_ignore=['tsserver']
+let g:ale_javascript_eslint_use_global = 1
+
