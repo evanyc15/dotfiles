@@ -32,6 +32,9 @@ augroup EnableSyntaxHighlighting
     autocmd! BufRead * if exists('syntax_on') && exists('b:current_syntax') && ! empty(&l:filetype) && index(split(&eventignore, ','), 'Syntax') != -1 | unlet! b:current_syntax | endif
 augroup END
 
+" Turn off syntax highlighting for large files to prevent vim slowdown
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
+
 
 " Folding configs
 set foldenable " Enable folding
@@ -46,7 +49,9 @@ au BufNewFile,BufRead *.py
 	\ set tabstop=4 |
         \ set softtabstop=4 |
         \ set shiftwidth=4 |
-        \ set textwidth=79 |
+        \ set textwidth=0 |
+	\ set wrap |
+	\ set linebreak |
         \ set expandtab |
         \ set autoindent |
         \ set fileformat=unix
@@ -93,6 +98,8 @@ Plug 'shmup/vim-sql-syntax'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 
 call plug#end()
 
@@ -210,9 +217,6 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
 	\'javascript': ['flow', 'eslint'],
 	\'python': ['flake8'],
-\}
-let g:ale_fixers = {
-	\'javascript': ['eslint'],
 \}
 let g:ale_linters_ignore=['tsserver']
 let g:ale_javascript_eslint_use_global = 1
