@@ -4,10 +4,14 @@ alias lsa='ls -Gpa'
 alias lsal='ls -Gpal'
 
 # Git aliases
+alias gcm='git checkout master'
 alias gcmp='git checkout master && git pull'
 alias gfor='git fetch origin && git rebase origin/master'
 alias gp='git pull'
 alias gs='git status'
+alias gb='git branch'
+alias gc='git commit'
+alias ga='git add .'
 
 # Base16 Colors
 BASE16_SHELL=$HOME/.config/base16-shell/
