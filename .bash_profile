@@ -7,6 +7,7 @@ alias lsal='ls -Gpal'
 alias gcmp='git checkout master && git pull'
 alias gfor='git fetch origin && git rebase origin/master'
 alias gp='git pull'
+alias gs='git status'
 
 # Base16 Colors
 BASE16_SHELL=$HOME/.config/base16-shell/
