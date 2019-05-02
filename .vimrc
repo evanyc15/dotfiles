@@ -72,9 +72,9 @@ au BufNewFile,BufRead *.html
 
 " CSS styling
 au BufNewFile,BufRead *.css
-	\ set tabstop=2 |
-	\ set softtabstop=2 |
-	\ set shiftwidth=2 |
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
 	\ set expandtab
 
 " SQL Styling
@@ -100,6 +100,7 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -112,7 +113,6 @@ vnoremap jk <ESC>
 " Remap leader to space
 let mapleader=" "
 nnoremap <Space> <Nop>
-nnoremap <leader>s :mksession! $HOME/session.vim<CR>
 
 " FZF Remap
 nnoremap <leader>f :Files<CR>

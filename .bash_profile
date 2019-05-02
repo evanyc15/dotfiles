@@ -3,6 +3,11 @@ alias ls='ls -Gp'
 alias lsa='ls -Gpa'
 alias lsal='ls -Gpal'
 
+# Git aliases
+alias gcmp='git checkout master && git pull'
+alias gfor='git fetch origin && git rebase origin/master'
+alias gp='git pull'
+
 # Base16 Colors
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
