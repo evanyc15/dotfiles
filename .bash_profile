@@ -12,6 +12,7 @@ alias gs='git status'
 alias gb='git branch'
 alias gc='git commit'
 alias ga='git add .'
+alias gcb='git checkout -b'
 
 # Base16 Colors
 BASE16_SHELL=$HOME/.config/base16-shell/

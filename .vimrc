@@ -7,6 +7,7 @@ set incsearch " Search while typing
 set hlsearch " Highlights all occurrences of search
 set backspace=indent,eol,start " Fixes issues with backspace not working in insert mode
 set hidden " Prevents buffer from being lost when switching
+set scrolloff=4 "Keep 4 lines at minimum above & below the cursor when scrolling around a file
 syntax on " Syntax highlighting
 filetype on
 
@@ -57,7 +58,7 @@ au BufNewFile,BufRead *.py
         \ set fileformat=unix
 
 " JS/JSX styling"
-au BufNewFile,BufRead *.js
+au BufNewFile,BufRead *.js,*.jsx
 	\ set tabstop=2 |
 	\ set softtabstop=2 |
 	\ set shiftwidth=2 |
@@ -79,6 +80,13 @@ au BufNewFile,BufRead *.css
 
 " SQL Styling
 au BufNewFile,BufRead *.ql set filetype=sql
+
+" YML styling"
+au BufNewFile,BufRead *.yml
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
+	\ set expandtab
 
 " ========== PLUG DEPENDENCY INITIALIZATIONS  ========= 
 " Plug Repo Calls
@@ -220,4 +228,3 @@ let g:ale_linters = {
 \}
 let g:ale_linters_ignore=['tsserver']
 let g:ale_javascript_eslint_use_global = 1
-
