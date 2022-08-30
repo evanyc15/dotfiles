@@ -104,6 +104,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --java-completer --tern-completer' }
 Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'shmup/vim-sql-syntax'
 Plug 'prettier/vim-prettier', {
