@@ -10,6 +10,7 @@ set hidden " Prevents buffer from being lost when switching
 set scrolloff=4 "Keep 4 lines at minimum above & below the cursor when scrolling around a file
 set nocompatible
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
+set termguicolors
 
 syntax on " Syntax highlighting
 filetype on
