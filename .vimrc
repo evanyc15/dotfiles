@@ -161,8 +161,11 @@ if filereadable(expand("$HOME/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
+" Vim base16theme set
+colorscheme base16-monokai
+
 " Airline Config
-let g:airline_theme='base16_oceanicnext'
+let g:airline_theme='base16_monokai'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols='unicode'
 let g:airline#extensions#branch#enabled = 1
