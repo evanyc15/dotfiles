@@ -8,7 +8,7 @@
 * base16 colors shell/vim
 * airline w/ themes
 
-For tmux, if the colors aren't showing up, make sure to put the following into ~/.bashrc
+For tmux, if the colors aren't showing up, make sure to put the following into ~/.bashrc:
 export TERM="xterm-256color"
 
 ## Installation
